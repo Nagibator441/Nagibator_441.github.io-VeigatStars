@@ -96,7 +96,7 @@
     </div>
     <form id="form">
         <input type="text" placeholder="Username" id="user_name">
-        <input type="text" placeholder="Сколько звезд отправить на u.n" id="user_stars">
+        <input type="text" placeholder="Сколько звезд отправить на ваш @username" id="user_stars">
         <button id="order">Оплатить</button>
 
     </form>
@@ -109,12 +109,11 @@
         buy.addEventListener('click', () => {
             document.getElementById('main').style.display = 'none';
             document.getElementById('form').style.display = 'block';
-            document.getElementById('user_name').value = tg.initDataUnsafe.first_name + ' ' + tg.initDataUnsafe.last_name
+            document.getElementById('user_name').value = tg.initDataUnsafe.user.first_name + ' ' + tg.initDataUnsafe.user.last_name
         });
 
-    
+
 
     </script>
 </body>
 </html>
-
