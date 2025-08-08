@@ -96,6 +96,7 @@
         <button id="buy">Купить звезды</button>
     </div>
     <form id="form">
+
         <input type="text" placeholder="@Username" id="user_name">
         <input type="text" placeholder="Сколько звезд отправить на ваш @username" id="user_stars">
         <input type="text" placeholder="Промокод" id="user_promo">
@@ -114,23 +115,26 @@
 
         });
 
+        order.addEventListner("click", () => {
+            let us_name = document.getElementById('user_name').value;
+            let num_stars = document.getElementById('user_stars').value;
+            let promo = document.getElementById('user_promo').value;
+            if(us_name.length < 5) {
+                document.getElementById("error").innerText = 'Ошибка в юзернейме';
+            }
+            let data = {
+                name: us_name,
+                stars: num_stars,
+                prom: promo
+            }
+            tg.sendDATA(JSON.stringify(data));
 
 
+
+        });
     </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
