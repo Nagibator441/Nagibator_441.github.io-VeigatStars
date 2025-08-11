@@ -13,7 +13,7 @@
         * {
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+             box-sizing: border-box;
         }
 
 
@@ -61,7 +61,8 @@
             color: var(--tg-theme-button-color);
             background: var(--tg-theme-button-text-color);
         }
-        
+
+
         button:hover {
             background: var(--tg-theme-secondary-bg-color);
         }
@@ -93,10 +94,10 @@
         <img src='https://s3.iimg.su/s/08/uKwoRjRxyckY9Y6jTCN7vPIcEiWqzfrIuMpYigo4.png'>
         <p>_______________________________________</p>
         <button id="buy">Купить звезды</button>
-        <button id="buy">Курс звезд</button>
+        <button id="star">Курс звезд</button>
         <p>_______________________________________</p>
-        <button id="buy">Купить Ton</button>
-        <button id="buy">Купить другую крипту</button>
+        <button id="buy_ton">Купить Ton</button>
+        <button id="buy_all_crypto">Купить другую крипту</button>
     </div>
     <form id="form">
 
@@ -106,15 +107,22 @@
         <button id="order">Оплатить</button>
 
     </form>
+    <form id="form_star">
+        <h1>Курс звезд</h1>
+        <p>тут будет курс звезд</p>
+        <button id="order">Назад</button>
+    </form>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script>
         let tg = window.Telegram.WebApp;
         let buy = document.getElementById('buy');
         let order = document.getElementById('order');
+        let star = document.getElementById('star');
 
         buy.addEventListener('click', () => {
             document.getElementById('main').style.display = 'none';
             document.getElementById('form').style.display = 'block';
+            document.getElementById('form_star').style.display = 'block';
 
         });
 
@@ -138,10 +146,6 @@
     </script>
 </body>
 </html>
-
-
-
-
 
 
 
